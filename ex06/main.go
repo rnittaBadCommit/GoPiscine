@@ -3,5 +3,7 @@ package main
 import "piscine"
 
 func main() {
-	piscine.PrintCombn(1)
+	for i := 1; i < 10; i++ {
+		piscine.PrintCombN(i)
+	}
 }

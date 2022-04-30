@@ -8,22 +8,23 @@ func printstring(s string) {
 	}
 }
 
-func recursive(left, n, int, is_first bool, s string) {
-	for n; n <= 9; n++ {
-		s = s + string('0' + rune(n))
-		if left == 0{
+func recursive(left, n int, is_first bool, s string) {
+	for ; n <= 9; n++ {
+		tmp := s + string('0'+rune(n))
+		if left == 0 {
 			if is_first {
 				printstring(", ")
 			}
-			printstring(s)
+			is_first = true
+			printstring(tmp)
 		} else {
-			recursice(left - 1, n + 1, is_first, s)
+			recursive(left-1, n+1, is_first, tmp)
 			is_first = true
 		}
 	}
 }
 
 func PrintCombN(n int) {
-	recursive(n - 1, 0, false, "")
+	recursive(n-1, 0, false, "")
 	ft.PrintRune('\n')
 }
