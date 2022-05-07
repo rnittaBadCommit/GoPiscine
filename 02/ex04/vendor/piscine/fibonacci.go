@@ -1,9 +1,9 @@
 package piscine
 
 func intMax() int {
-	var max ui
+	var max uint
 
-	return (^max>>1)
+	return (int(^max >> 1))
 }
 
 func Fibonacci(index int) int {
@@ -17,8 +17,8 @@ func Fibonacci(index int) int {
 		tmp1 := Fibonacci(index - 1)
 		tmp2 := Fibonacci(index - 2)
 		max := intMax()
-		if tmp1 < max() - tmp2 {
-			return (Fibonacci(index - 1) + Fibonacci(index - 2))
+		if tmp1 < max-tmp2 {
+			return (Fibonacci(index-1) + Fibonacci(index-2))
 		} else {
 			return (max)
 		}
