@@ -1,3 +1,3 @@
-module ex00
+module ex04
 
 go 1.18

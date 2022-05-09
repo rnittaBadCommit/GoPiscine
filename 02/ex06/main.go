@@ -6,9 +6,9 @@ import (
 )
 
 func main() {
-	a := 0
-	b := 1
-	piscine.Swap(&a, &b)
-	fmt.Println(a)
-	fmt.Println(b)
+	for i := -1; i < 100; i++ {
+		if piscine.IsPrime(i) {
+			fmt.Printf("%d\n", i);
+		}
+	}
 }

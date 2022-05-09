@@ -6,10 +6,7 @@ import (
 )
 
 func main() {
-	s := "Hello World!"
-	s = piscine.StrRev(s)
-	fmt.Println(s)
-	s = ""
-	s = piscine.StrRev(s)
-	fmt.Println(s)
+	for i := -1; i < 100; i++ {
+		fmt.Printf("%d: %t\n", i, piscine.FindNextPrime(i));
+	}
 }
