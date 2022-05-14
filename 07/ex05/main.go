@@ -3,25 +3,23 @@ package main
 import (
 	"fmt"
 	"piscine"
-	"os"
 )
-
-func f(a, b int) int {
-	return (a - b)
-}
 
 func main() {
 	var args[3] string
 
 	if piscine.IsValidArgs(args) == false {
-		os.Exit(1)
+		return
 	}
 
-	i1 := piscine.Atoi(args[0])
-	i2 := piscine.Atoi(args[2])
+	i1, err := piscine.Atoi(args[0])
+	i2, err2 := piscine.Atoi(args[2])
+	if err + err2 != 0 {
+		return
+	}
 
 	if piscine.IsOverFlow(i1, args[1], i2) {
-		os.Exit(1)
+		return
 	}
 
 	if args[1] == "+" {

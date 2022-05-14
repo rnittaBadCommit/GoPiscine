@@ -1,6 +1,6 @@
 package piscine
 
-func IsOverFlow(int i1, ope string, i2 int) bool {
+func IsOverFlow(i1 int, ope string, i2 int) bool {
 	if ope == "+" {
 		if i1 > 0 && i2 > 0 {
 			return (i1 + i2 <= 0)

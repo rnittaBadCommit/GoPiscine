@@ -1,8 +1,17 @@
 package piscine
 
-import "os"
+import (
+	"fmt"
+	"os"
+)
 
 func isNumeric(s string) bool {
+	if s == "" || s == "-" {
+		return false
+	}
+	if s[0] == '-' {
+		s = s[1:]
+	}
 	for _, r := range s {
 		if r < '0' || r > '9' {
 			return (false)
@@ -20,28 +29,33 @@ func isOperator(s string) bool {
 }
 
 
-func IsValidArgs(args [3]string) int {
-	var tmp int
+func IsValidArgs(args [3]string) bool {
+	var argsLen int
 
-	for i, arg := range os.Args() {
-		if i > 4 {
-			return (0)
-		} else if i > 0 {
-			args[i] = arg
+	for _, arg := range os.Args {
+		if argsLen > 4 {
+			return (false)
+		} else if argsLen > 0 {
+			args[argsLen - 1] = arg
 		}
+		argsLen++
 	}
-	if !isNumeric(args[0]) || !isOperator([args[1]) || !isNumeric(args[2]) {
-		return (0)
+	if argsLen != 4 {
+		return (false)
+	}
+
+	if !isNumeric(args[0]) || !isOperator(args[1]) || !isNumeric(args[2]) {
+		return (false)
 	} else if args[2] == "0" {
 		if args[1] == "/" {
 			fmt.Println("No division by 0")
-			return (0)
+			return (false)
 		} else if args[1] == "%" {
 			fmt.Println("No modulo by 0")
-			return (0)
+			return (false)
 		}
 	}
-	return (1)
+	return (true)
 }
 
 
