@@ -29,7 +29,7 @@ func isOperator(s string) bool {
 }
 
 
-func IsValidArgs(args [3]string) bool {
+func IsValidArgs(args []string) bool {
 	var argsLen int
 
 	for _, arg := range os.Args {

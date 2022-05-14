@@ -8,7 +8,7 @@ import (
 func main() {
 	var args[3] string
 
-	if piscine.IsValidArgs(args) == false {
+	if piscine.IsValidArgs(args[:]) == false {
 		return
 	}
 
