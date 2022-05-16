@@ -21,7 +21,6 @@ func printStr(s string) {
 	for _, r := range s {
 		ft.PrintRune(r)
 	}
-	ft.PrintRune('n')
 }
 
 func isEven(nbr int) boolean {
