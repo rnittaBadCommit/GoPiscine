@@ -3,7 +3,7 @@ package piscine
 import "ft"
 
 type Door struct {
-	state int
+	State int
 }
 
 const OPEN = 0
@@ -13,25 +13,26 @@ func PrintStr(s string) {
 	for _, r := range s {
 		ft.PrintRune(r)
 	}
+	ft.PrintRune('\n')
 }
 
 func OpenDoor(ptrDoor *Door) {
 	PrintStr("Door Opening...")
-	ptrDoor.state = OPEN
+	ptrDoor.State = OPEN
 }
 
 func CloseDoor(ptrDoor *Door) {
 	PrintStr("Door Closing...")
-	ptrDoor.state = CLOSE
+	ptrDoor.State = CLOSE
 }
 
 func IsDoorOpen(Door Door) bool {
 	PrintStr("is the Door opened ?")
-	return Door.state == OPEN
+	return Door.State == OPEN
 }
 
 func IsDoorClose(ptrDoor *Door) bool {
 	PrintStr("is the Door closed ?")
-	return ptrDoor.state == CLOSE
+	return ptrDoor.State == CLOSE
 }
 
