@@ -14,6 +14,7 @@ func printStr(s string) {
 func DisplayFile() {
 	var len int
 	var fileName string
+	var buf []byte
 
 	for _, fileName = range os.Args {
 		len++;
@@ -26,9 +27,21 @@ func DisplayFile() {
 			}
 		}
 	}
+
+	if len == 1 {
+		for ; true; {
+			n, err := os.Stdin.Read(buf)
+			if err != nil {
+				os.Exit(1)
+			} else if n != 0 {
+				printStr(string(buf))
+			}
+		}
+	}
+/*
 	if len == 1 {
 		for ;true; {
-			data, err := os.ReadFile("/dev/stdin")
+			data, err := os.Read("/dev/stdin")
 			if err != nil {
 				printStr("something wrong\n")
 			} else {
@@ -36,4 +49,6 @@ func DisplayFile() {
 			}
 		}
 	}
+
+	*/
 }
