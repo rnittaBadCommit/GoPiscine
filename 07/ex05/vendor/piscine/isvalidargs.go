@@ -33,7 +33,7 @@ func IsValidArgs(args []string) bool {
 	var argsLen int
 
 	for _, arg := range os.Args {
-		if argsLen > 4 {
+		if argsLen >= 4 {
 			return (false)
 		} else if argsLen > 0 {
 			args[argsLen - 1] = arg

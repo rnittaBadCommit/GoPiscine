@@ -1,6 +1,6 @@
 package piscine
 
-func Any(f func(string) bool, a []string) int {
+func CountIf(f func(string) bool, a []string) int {
 	var ret int
 
 	for _, s := range a {
